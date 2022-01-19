@@ -36,9 +36,7 @@ if($email && $pass && $birthdate && $name) {
         $auth->registerUser($name, $email, $pass, $birthdate);
         header('Location: '.$base);
         exit;
-    }
-
- 
+    } 
 }
 
 $_SESSION['alert'] = "Erro ao cadastrar";
