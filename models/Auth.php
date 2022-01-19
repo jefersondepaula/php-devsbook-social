@@ -1,5 +1,7 @@
 <?php
+
 require_once 'dao/UserDaoMysql.php';
+
 class Auth 
 {
     private $pdo;
