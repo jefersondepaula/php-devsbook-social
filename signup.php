@@ -43,7 +43,6 @@ require 'config.php';
         let mask = {
             mask: '00/00/0000'
         }
-
         IMask(element,mask);
     
     </script>

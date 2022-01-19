@@ -1,6 +1,4 @@
-<?php 
-require 'config.php';
-?>
+<?php require 'config.php';?>
 
 <!DOCTYPE html>
 <html>
@@ -18,6 +16,7 @@ require 'config.php';
     </header>
     <section class="container main">
         <form method="POST" action="<?=$base?>/loginAction.php">
+
             <?php if(!empty($_SESSION['alert'])):?>
                 <?=$_SESSION['alert'];?>
                 <?php $_SESSION['alert'] = '';?>

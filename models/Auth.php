@@ -5,7 +5,6 @@ class Auth
     private $pdo;
     private $base;
 
-
     public function __construct(PDO $pdo, $base)
     {
         $this->pdo = $pdo;
