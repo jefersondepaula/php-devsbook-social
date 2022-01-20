@@ -61,5 +61,19 @@ class Auth
     public function registerUser($name, $email, $pass, $birthdate)
     {
         $userDao = new UserDaoMysql($this->pdo);
+
+        $pass = password_hash($pass, PASSWORD_DEFAULT);
+        $token = md5(time().rand(0,9999));
+
+        $newUser = new User();
+        $newUser->name = $name;
+        $newUser->email = $email;
+        $newUser->password = $pass;
+        $newUser->birthdate = $birthdate;
+        $newUser->token = $token;
+
+        $userDao->insert($newUser);
+
+        $_SESSION['token'] = $token;
     }
 }
