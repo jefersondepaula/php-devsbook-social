@@ -18,7 +18,7 @@ class UserDaoMysql implements UserDAO
         $u->id = $array['id'] ?? 0;
         $u->name = $array['name'] ?? '';
         $u->email = $array['email'] ?? '';
-        $u->password = $array['password']?? '';
+        $u->password = $array['password'] ?? '';
         $u->birthdate = $array['birthdate'] ?? '';
         $u->city = $array['city'] ?? '';
         $u->work = $array['work'] ?? '';
@@ -32,7 +32,7 @@ class UserDaoMysql implements UserDAO
     public function findByToken($token)
     {
         if(!empty($token)) {
-            $sql = $this->pdo->prepare("select * from users where token=:token");
+            $sql = $this->pdo->prepare("SELECT * FROM users WHERE token=:token");
             $sql->bindValue(':token',$token);
             $sql->execute();
 
@@ -42,16 +42,14 @@ class UserDaoMysql implements UserDAO
 
                 return $user;
             }
-
         }
-
         return false;
     }
 
     public function findByEmail($email) 
     {   
         if(!empty($email)) {
-            $sql = $this->pdo->prepare("select * from users where email = :email");
+            $sql = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
             $sql->bindValue(':email', $email);
             $sql->execute();
 
@@ -61,15 +59,13 @@ class UserDaoMysql implements UserDAO
 
                 return $user;
             }
-
         }
-
         return false;
     }
 
     public function update(User $u)
     {
-        $sql = $this->pdo->prepare("insert into users set 
+        $sql = $this->pdo->prepare("UPDATE users SET 
             email = :email,
             password = :password,
             name = :name,
@@ -79,7 +75,7 @@ class UserDaoMysql implements UserDAO
             avatar = :avatar,
             cover = :cover,
             token = :token
-            where id = :id");
+            WHERE id = :id");
 
         $sql->bindValue(":email",$u->email);
         $sql->bindValue(":password",$u->password);
