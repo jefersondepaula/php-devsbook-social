@@ -1,7 +1,7 @@
 <?php
 
-require("config.php");
+require 'config.php';
 
 $_SESSION['token'] = '';
 header("Location: " .$base);
-exit();
+exit;

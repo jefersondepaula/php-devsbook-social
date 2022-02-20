@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/devsbook.iml" filepath="$PROJECT_DIR$/.idea/devsbook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../githubstars/.idea/githubstars.iml" filepath="$PROJECT_DIR$/../githubstars/.idea/githubstars.iml" />
       <module fileurl="file://$PROJECT_DIR$/../php-pdo/.idea/php-pdo.iml" filepath="$PROJECT_DIR$/../php-pdo/.idea/php-pdo.iml" />
     </modules>
   </component>
